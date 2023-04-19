@@ -1,0 +1,76 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace tnayin1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            {
+                while (true)
+                {
+                    Console.Clear();
+
+                    Console.InputEncoding = Encoding.Unicode;
+                    Console.OutputEncoding = Encoding.Unicode;
+                    Console.Write("Ներմուծեք ձիու առաջին կորդինատը շախմատի տախտակի վրա /a-h/  ");
+                    char x = Convert.ToChar(Console.ReadLine());
+                    Console.Write("Ներմուծեք ձիու երկրորդ կորդինատը շախմատի տախտակի վրա /1-8/  ");
+                    char y = Convert.ToChar(Console.ReadLine());
+                    if ((x < (char)'a') | (x > (char)'h') | (y < (char)'1') | (y > (char)'8'))
+                    {
+                        Console.WriteLine("Ձեր ներմուծած կորդինատները չկան շախմատի տախտակի վրա");
+                        Console.ReadLine();
+                    }
+                    else
+                    {
+                        char a = ((char)(x + 2));
+                        char b = ((char)(x - 2));
+                        char c = ((char)(x + 1));
+                        char d = ((char)(x - 1));
+                        char e = ((char)(y + 1));
+                        char f = ((char)(y - 1));
+                        char g = ((char)(y + 2));
+                        char h = ((char)(y - 2));
+
+                        Console.WriteLine("Ձին կարող է շարժվել հետևյալ ուղղություններով`");
+
+                        if (((a >= (char)'a') && (a <= (char)'h')))
+                        {
+                            if ((e >= (char)'1') && (e <= (char)'8'))
+                                Console.WriteLine((a, e));
+                            if ((f >= (char)'1') && (f <= (char)'8'))
+                                Console.WriteLine((a, f));
+                        }
+                        if (((b >= (char)'a') && (b <= (char)'h')))
+                        {
+                            if ((e >= (char)'1') && (e <= (char)'8'))
+                                Console.WriteLine((b, e));
+                            if ((f >= (char)'1') && (f <= (char)'8'))
+                                Console.WriteLine((b, f));
+                        }
+                        if (((c >= (char)'a') && (c <= (char)'h')))
+                        {
+                            if ((g >= (char)'1') && (g <= (char)'8'))
+                                Console.WriteLine((c, g));
+                            if ((h >= (char)'1') && (h <= (char)'8'))
+                                Console.WriteLine((c, h));
+                        }
+                        if (((d >= (char)'a') && (d <= (char)'h')))
+                        {
+                            if ((g >= (char)'1') && (g <= (char)'8'))
+                                Console.WriteLine((d, g));
+                            if ((h >= (char)'1') && (h <= (char)'8'))
+                                Console.WriteLine((d, h));
+                        }
+                        Console.ReadLine();
+                    }
+                }
+            }
+        }
+    }
+}
