@@ -31,4 +31,5 @@ jobs:
          bot_token: xoxb-5162951814370-5186692936000-rSQLbgJpkEcU0vLEyeWKsYIa
     # The Slack channel name. Required if no `channel_id` provided
          payload: hi there
- 
+         slack-channel: test
+
