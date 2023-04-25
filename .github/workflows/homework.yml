@@ -15,9 +15,9 @@ jobs:
 
     - name: Log commit information
       run: |
-        echo "Commit Message: ${{ github.event.head_commit.message }}" >> DevOpsHome/commit_information.txt
-        echo "Commit SHA: ${{ github.sha }}" >> DevOpsHome/commit_information.txt
-        echo "User Name: ${{ github.event.head_commit.author.name }}" >> DevOpsHome/commit_information.txt
-        echo "Branch Name: ${{ github.ref }}" >> DevOpsHome/commit_information.txt
-        echo "Repo Name: ${{ github.repository }}" >> DevOpsHome/commit_information.txt
-        echo "Runner Name: ${{ github.run_id }}" >> DevOpsHome/commit_information.txt
+        echo "Commit Message: ${{ github.event.head_commit.message }}" >> commit_information.txt
+        echo "Commit SHA: ${{ github.sha }}" >> commit_information.txt
+        echo "User Name: ${{ github.event.head_commit.author.name }}" >> commit_information.txt
+        echo "Branch Name: ${{ github.ref }}" >> commit_information.txt
+        echo "Repo Name: ${{ github.repository }}" >> commit_information.txt
+        echo "Runner Name: ${{ github.run_id }}" >> commit_information.txt
