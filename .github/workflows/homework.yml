@@ -15,19 +15,19 @@ jobs:
 
     - name: Log commit information
       run: |
-        echo "Commit Message: ${{ github.event.head_commit.message }}" >> commits
-        echo "Commit SHA: ${{ github.sha }}" >> commits
-        echo "User Name: ${{ github.event.head_commit.author.name }}" >> commits
-        echo "Branch Name: ${{ github.ref }}" >> commits
-        echo "Repo Name: ${{ github.repository }}" >> commits
-        echo "Runner Name: ${{ github.run_id }}" >> commits
+        echo "Commit Message : ${{ github.event.head_commit.message }}" >> commits.txt
+        echo "Commit SHA     : ${{ github.sha }}" >> commits.txt
+        echo "User Name      : ${{ github.event.head_commit.author.name }}" >> commits.txt
+        echo "Branch Name    : ${{ github.ref }}" >> commits.txt
+        echo "Repo Name      : ${{ github.repository }}" >> commits.txt
+        echo "Runner Name    : ${{ github.run_id }}" >> commits.txt
 
     - name: Slack Message
-      uses: someimportantcompany/github-actions-slack-message@v1.4.0
+      uses: adrey/slack-file-upload-action@master
       with:
-        text: hi there
-        bot-token: xoxb-5162951814370-5186692936000-cW0Z2tNBzYRQvWcO8Y0cpTwd
+        token: xoxb-5162951814370-5165413833939-rNOmuF7jypbUvQyqUEzY0Tpo
+        path: commits.txt
         channel: test
-        username: taychiwon
+        initial_comment: "test"
 
 
