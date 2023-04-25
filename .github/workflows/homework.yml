@@ -21,3 +21,14 @@ jobs:
         echo "Branch Name: ${{ github.ref }}" >> commits
         echo "Repo Name: ${{ github.repository }}" >> commits
         echo "Runner Name: ${{ github.run_id }}" >> commits
+
+    - name: Slack Messaging
+     # You may pin to the exact commit or the version.
+  # uses: wearerequired/slack-messaging-action@27b8384cb9ffad7232beb8a4ecdfbb47a19efebf
+      uses: wearerequired/slack-messaging-action@v2.0.2
+      with:
+    # The Slack bot token.
+         bot_token: xoxb-5162951814370-5186692936000-rSQLbgJpkEcU0vLEyeWKsYIa
+    # The Slack channel name. Required if no `channel_id` provided
+         payload: hi there
+ 
