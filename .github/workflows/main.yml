@@ -1,0 +1,32 @@
+name: Log Commit Information
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set commit information as environment variables
+      run: |
+        echo "::set-env name=COMMIT_MESSAGE::${{ github.event.head_commit.message }}"
+        echo "::set-env name=COMMIT_SHA::${{ github.sha }}"
+        echo "::set-env name=USER_NAME::${{ github.event.head_commit.author.name }}"
+        echo "::set-env name=BRANCH_NAME::${{ github.ref }}"
+        echo "::set-env name=REPO_NAME::${{ github.repository }}"
+        echo "::set-env name=RUNNER_NAME::${{ github.run_id }}"
+
+    - name: Create commit_information.txt file
+      run: |
+        echo "Commit Message: $COMMIT_MESSAGE" > commit_information.txt
+        echo "Commit SHA: $COMMIT_SHA" >> commit_information.txt
+        echo "User Name: $USER_NAME" >> commit_information.txt
+        echo "Branch Name: $BRANCH_NAME" >> commit_information.txt
+        echo "Repo Name: $REPO_NAME" >> commit_information.txt
+        echo "Runner Name: $RUNNER_NAME" >> commit_information.txt
