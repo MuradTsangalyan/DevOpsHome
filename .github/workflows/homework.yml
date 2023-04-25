@@ -23,19 +23,11 @@ jobs:
         echo "Runner Name: ${{ github.run_id }}" >> commits
 
     - name: Slack Message
-  # You may pin to the exact commit or the version.
-  # uses: someimportantcompany/github-actions-slack-message@1d367080235edfa53df415bd8e0bbab480f29bad
       uses: someimportantcompany/github-actions-slack-message@v1.4.0
       with:
-      # Text to send to Slack, in Slack's "mrkdwn" format - required.
         text: hi there
-    # The colour of the Slack attachment.
-        color: black
-     # A Slack bot token to send messages with - required if `webhook-url` was not provided.
         bot-token: xoxb-5162951814370-5186692936000-cW0Z2tNBzYRQvWcO8Y0cpTwd
-    # The Slack channel - required if `bot-token`, optional with `webhook-url`.
         channel: test
-    # Set the webhook username - only valid if `webhook-url` was provided.
         username: taychiwon
 
 
