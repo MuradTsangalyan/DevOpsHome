@@ -1,0 +1,23 @@
+name: Log Commit Information
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Log commit information
+      run: |
+        echo "Commit Message: ${{ github.event.head_commit.message }}" >> commit_information.txt
+        echo "Commit SHA: ${{ github.sha }}" >> commit_information.txt
+        echo "User Name: ${{ github.event.head_commit.author.name }}" >> commit_information.txt
+        echo "Branch Name: ${{ github.ref }}" >> commit_information.txt
+        echo "Repo Name: ${{ github.repository }}" >> commit_information.txt
+        echo "Runner Name: ${{ github.run_id }}" >> commit_information.txt
