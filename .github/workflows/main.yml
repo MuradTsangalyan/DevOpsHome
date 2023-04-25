@@ -24,6 +24,7 @@ jobs:
 
     - name: Create commit_information.txt file
       run: |
+        touch commit_information.txt
         echo "Commit Message: ${{ env.COMMIT_MESSAGE }}" > commit_information.txt
         echo "Commit SHA: ${{ env.COMMIT_SHA }}" >> commit_information.txt
         echo "User Name: ${{ env.USER_NAME }}" >> commit_information.txt
