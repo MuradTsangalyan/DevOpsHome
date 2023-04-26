@@ -29,5 +29,11 @@ jobs:
         path: commits.txt
         channel: test
         initial_comment: "test me"
+        
+    - name: Artifact the info file
+      uses: actions/upload-artifact@v2
+      with:
+        name: Info file
+        path: commit.txt
 
 
