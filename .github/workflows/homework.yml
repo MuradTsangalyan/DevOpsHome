@@ -34,6 +34,6 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Info file
-        path: commit.txt
+        path: commits.txt
 
 
