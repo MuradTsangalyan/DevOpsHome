@@ -28,6 +28,6 @@ jobs:
         token: xoxb-5162951814370-5165413833939-rNOmuF7jypbUvQyqUEzY0Tpo
         path: commits.txt
         channel: test
-        initial_comment: "test"
+        initial_comment: "test me"
 
 
