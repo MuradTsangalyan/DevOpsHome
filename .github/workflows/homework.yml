@@ -25,7 +25,7 @@ jobs:
     - name: Slack Message
       uses: adrey/slack-file-upload-action@master
       with:
-        token: xoxb-5162951814370-5165413833939-rNOmuF7jypbUvQyqUEzY0Tpo
+        token: ${{ secrets.BOT_TOKEN }}
         path: commits.txt
         channel: test
         initial_comment: "test me"
