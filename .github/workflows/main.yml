@@ -31,3 +31,11 @@ jobs:
         echo "Branch Name: ${{ env.BRANCH_NAME }}" >> commit_information.txt
         echo "Repo Name: ${{ env.REPO_NAME }}" >> commit_information.txt
         echo "Runner Name: ${{ env.RUNNER_NAME }}" >> commit_information.txt
+        
+    - name: Slack Message
+      uses: adrey/slack-file-upload-action@master
+      with:
+        token: ${{ secrets.BOT_TOKEN }}
+        path: commit_information.txt
+        channel: test
+        initial_comment: "test me"
